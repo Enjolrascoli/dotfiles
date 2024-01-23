@@ -1,0 +1,16 @@
+#!/bin/bash
+
+action=$1
+
+if [ "${action}" = "off" ]; then
+	status=0
+elif [ "${action}" = "on" ]; then
+	status=1
+else
+	status=$(udevadm info --attribute-walk --path=/sys/class/power_supply/AC0 | grep "ATTR{online}" | awk -F\" '{print $2}')
+fi
+
+# on AC
+if [[ $status == 1 ]]; then
+	(gtk-launch dummy.desktop >/dev/null 2>&1)
+fi

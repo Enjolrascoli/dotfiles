@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [[ "$1" = "raise" ]]; then
+	swayosd-client --output-volume raise
+	# wpctl set-volume @DEFAULT_SINK@ 5%+
+elif [[ "$1" = "lower" ]]; then
+	swayosd-client --output-volume lower
+	# wpctl set-volume @DEFAULT_SINK@ 5%-
+elif [[ "$1" = "mute" ]]; then
+	swayosd-client --output-volume mute-toggle
+	# wpctl set-mute @DEFAULT_SINK@ toggle
+elif [[ "$1" = "mic-mute" ]]; then
+	swayosd-client --input-volume mute-toggle
+	# wpctl set-mute @DEFAULT_SOURCE@ toggle
+fi

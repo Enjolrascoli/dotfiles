@@ -1,0 +1,91 @@
+{
+    "height": 36,
+    "modules-left": ["custom/barpadding","hyprland/workspaces","tray"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": [ "battery", "cpu", "bluetooth", "wireplumber", "custom/notification", "clock#time"],
+    "layer": "top",
+    "margin-top": 2,
+
+    "hyprland/window": {
+        "format": " {} ",
+        "max-length": 100,
+        "tooltip": false
+    },
+
+    "hyprland/workspaces": {
+        "on-click": "activate",
+        "sort-by-number": true
+    },
+
+    "clock#time": {
+        "format": "{:%H:%M:%OS}",
+        //"tooltip-format": "{:%a, %d %b %H:%M}",
+        "tooltip-format": "<big>{:%Y %B %d, %a}</big>\n<tt><small>{calendar}</small></tt>",
+        "interval": 1
+    },
+
+    "memory": {
+        "format": "{icon} {percentage}%",
+        "format-icon": [""],
+        "tooltip-format": "{used:0.2f}/{total:0.2f} GB Used"
+    },
+
+    "cpu":{
+        "format": "﬙ {usage}%",
+        "interval": 1
+    },
+
+    "wireplumber": {
+        "format": "{icon} {volume}%",
+        "format-muted": " {volume}%",
+        "format-icons": ["", "", ""]
+    },
+
+    "tray":{
+        "spacing": 10
+    },
+
+    "battery": {
+        "format": "{icon}  {capacity}%|{power}W",
+        "format-icons": ["", "", "", "", ""],
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "interval": 1,
+    },
+
+    "temperature": {
+        "format": "{icon} {temperatureC}°C",
+        "format-icon": [""],
+    },
+
+    "bluetooth": {
+        "format-on": "󰂯",
+        "format-off": "󰂲",
+        "format-disabled": "󰂲",
+        "format-connected": "󰂱",
+        "on-click": "blueberry",
+        "on-click-right": "rfkill toggle bluetooth",
+    },
+
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "<span foreground='red'><sup></sup></span>",
+            "none": "󰂜",
+            "dnd-notification": "󰪑<span foreground='red'><sup></sup></span>",
+            "dnd-none": "󰪑",
+            "inhibited-notification": "󰂜<span foreground='red'><sup></sup></span>",
+            "inhibited-none": "󰂜",
+            "dnd-inhibited-notification": "󰪑<span foreground='red'><sup></sup></span>",
+            "dnd-inhibited-none": "󰪑"
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
+}

@@ -1,0 +1,79 @@
+@import "mocha.css";
+
+window#waybar {
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  min-height: 0;
+}
+
+#workspaces {
+  background: transparent;
+  border-radius: 8px;
+  margin: 3px 0px;
+  padding: 3px;
+  margin-right: 4px;
+  font-family: NotoSans;
+}
+
+#workspaces button {
+  padding: 0px 4px;
+  margin: 0px 4px;
+  background: transparent;
+  border-radius: 8px;
+}
+
+#workspaces button.active {
+  background: @blue;
+  padding-right: 12px;
+}
+
+#tray {
+  background: @base;
+  color: @base;
+  padding: 0px 16px;
+  border-radius: 8px;
+  margin: 4px 0px;
+  font-family: NotoSansMono;
+}
+
+window {
+  background: rgba(30, 30, 46, 0);
+  color: @text;
+}
+
+#window {
+  background: rgba(30, 30, 46, 0.98);
+  padding: 0px 8px 0px 8px;
+  border-radius: 8;
+  margin: 4px 0px 4px 0px;
+  min-width: 24px;
+}
+
+/* @import url("app.css"); */
+
+window#waybar.empty #window,
+window#waybar.solo #window {
+  background: @base;
+}
+
+window#waybar.floating,
+window#waybar.tiled {
+  background: transparent;
+}
+
+#battery,
+#cpu,
+#memory,
+#wireplumber,
+#clock,
+#bluetooth,
+#custom-notification,
+#temperature {
+  padding: 0px 12px;
+  border-radius: 8px;
+  margin: 4px 0px;
+  margin-right: 4px;
+  font-family: NotoSansMono;
+  background: @base;
+}

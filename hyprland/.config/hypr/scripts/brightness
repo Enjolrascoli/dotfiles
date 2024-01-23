@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [[ "$1" = "up" || "$1" = "raise" ]]; then
+	swayosd-client --brightness raise
+else
+	swayosd-client --brightness lower
+fi
+#brightnessctl set 5%+

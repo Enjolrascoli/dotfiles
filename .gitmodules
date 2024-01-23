@@ -1,0 +1,12 @@
+[submodule "nvim/.config/nvim"]
+	path = nvim/.config/nvim
+	url = git@github.com:ayamir/nvimdots.git
+[submodule "zsh/.config/zsh/fzf-tab"]
+	path = zsh/.config/zsh/fzf-tab
+	url = git@github.com:Aloxaf/fzf-tab.git
+[submodule "zsh/.config/zsh/zsh-autocomplete"]
+	path = zsh/.config/zsh/zsh-autocomplete
+	url = git@github.com:marlonrichert/zsh-autocomplete.git
+[submodule "zsh/.config/zsh/zsh-history-substring-search"]
+	path = zsh/.config/zsh/zsh-history-substring-search
+	url = git@github.com:zsh-users/zsh-history-substring-search.git

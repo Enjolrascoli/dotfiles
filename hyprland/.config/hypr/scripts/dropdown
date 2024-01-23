@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [[ -n $(hyprctl -j workspaces | jq '.[].name | select(.=="special:dropdown")') ]]; then
+	hyprctl dispatch togglespecialworkspace dropdown
+else
+	hyprctl dispatch -- exec [ workspace special:dropdown ] kitty --class kitty-dropdown --override background_opacity=1
+	hyprctl dispatch togglespecialworkspace dropdown
+fi
