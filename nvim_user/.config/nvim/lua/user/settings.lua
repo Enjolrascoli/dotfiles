@@ -12,4 +12,7 @@ settings["server_formatting_block_list"] = {
 	clangd = true,
 	texlab = true,
 }
+
+vim.filetype.add({ extension = { typ = "typst" } })
+
 return settings
