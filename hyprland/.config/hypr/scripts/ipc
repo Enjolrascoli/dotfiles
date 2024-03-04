@@ -7,7 +7,7 @@ handle() {
 	# move other windows out of dropdown workspace
 	openwindow*)
 		read -r window_address workspace window_class window_title <<<$(echo "$line" | awk -F "[>,]" '{print $3,$4,$5,$6}')
-		if [[ "$workspace" = "special:dropdown" && "$window_class" != "kitty-dropdown" ]]; then
+		if [[ "$workspace" = "special:dropdown" && "$window_class" != "dropdown" ]]; then
 			hyprctl dispatch movetoworkspace e+0,address:0x${window_address}
 			#hyprctl dispatch togglespecialworkspace dropdown
 		fi
