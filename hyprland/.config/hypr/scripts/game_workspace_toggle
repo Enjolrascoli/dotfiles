@@ -1,0 +1,14 @@
+#!/bin/bash
+
+current_workspace=$(hyprctl activeworkspace -j | jq '.id')
+
+if [[ ${current_workspace} == 11 ]]; then
+	number_of_monitor=$(hyprctl monitors -j | jq length)
+	if [[ ${number_of_monitor} == 1 ]]; then
+		hyprctl dispatch workspace previous
+	else
+		hyprctl dispatch focusmonitor 1
+	fi
+else
+	hyprctl dispatch workspace 11
+fi
