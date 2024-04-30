@@ -13,7 +13,7 @@ window#waybar {
   margin: 3px 0px;
   padding: 3px;
   margin-right: 4px;
-  font-family: NotoSans;
+  font-family: NotoSansMono;
 }
 
 #workspaces button {
@@ -69,6 +69,7 @@ window#waybar.tiled {
 #clock,
 #bluetooth,
 #custom-notification,
+#custom-keyd,
 #temperature {
   padding: 0px 12px;
   border-radius: 8px;
