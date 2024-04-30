@@ -1,0 +1,31 @@
+import = [
+  # uncomment the flavour you want below:
+  # "~/.config/alacritty/catppuccin-latte.toml"
+  # "~/.config/alacritty/catppuccin-frappe.toml"
+  # "~/.config/alacritty/catppuccin-macchiato.toml"
+  "~/.config/alacritty/catppuccin-mocha.toml"
+]
+
+[window]
+padding = {x = 2, y = 2}
+
+[env]
+TERM = "xterm-256color"
+# WINIT_X11_SCALE_FACTOR = "1"
+
+[font]
+# normal = {family = "MesloLGSNerdFontMono"}
+# normal  = {family = "DejaVuSansM Nerd Font Mono"}
+normal  = {family = "NotoSansM Nerd Font Mono", style = "Medium"}
+bold    = {family = "NotoSansM Nerd Font Mono", style = "Bold"}
+italic  = {family = "NotoSansM Nerd Font Mono"}
+size = 12
+
+[keyboard]
+bindings = [
+   { key = "Return", mods = "Control|Shift", action = "SpawnNewInstance" }
+]
+
+# [shell]
+# program = "/bin/zsh"
+# args = ["-l", "-c", "tmux new -As main"]
