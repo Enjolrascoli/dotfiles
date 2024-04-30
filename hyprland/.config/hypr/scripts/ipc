@@ -18,13 +18,13 @@ handle() {
 
 	# move workspace to monitor when connected
 	monitoradded*)
-		monitor_name=$(echo "$line" | awk -F "[>,]" '{print $3}')
-		if [[ "$monitor_name" = "DP-3" ]]; then
-			hyprctl dispatch moveworkspacetomonitor "6 DP-3"
-			hyprctl dispatch moveworkspacetomonitor "7 DP-3"
-			hyprctl dispatch moveworkspacetomonitor "8 DP-3"
-			hyprctl dispatch moveworkspacetomonitor "9 DP-3"
-			hyprctl dispatch moveworkspacetomonitor "10 DP-3"
+		monitor_name=$(echo "$line" | awk -F "[>,]" '{print $5}')
+		if [[ "$monitor_name" = "HKC OVERSEAS LIMITED 27E1Q 0000000000001" ]]; then
+			hyprctl dispatch moveworkspacetomonitor "6 desc:HKC OVERSEAS LIMITED 27E1Q 0000000000001"
+			hyprctl dispatch moveworkspacetomonitor "7 desc:HKC OVERSEAS LIMITED 27E1Q 0000000000001"
+			hyprctl dispatch moveworkspacetomonitor "8 desc:HKC OVERSEAS LIMITED 27E1Q 0000000000001"
+			hyprctl dispatch moveworkspacetomonitor "9 desc:HKC OVERSEAS LIMITED 27E1Q 0000000000001"
+			hyprctl dispatch moveworkspacetomonitor "10 desc:HKC OVERSEAS LIMITED 27E1Q 0000000000001"
 		fi
 		;;
 	esac
