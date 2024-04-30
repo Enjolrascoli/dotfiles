@@ -12,7 +12,7 @@ delim = " "
 # {counter_sup} - superscripted count of clients on the workspace, and simple {counter}, {delim}
 # {icon}, {client}
 # workspace formatter
-workspace = "{id}:{delim}{clients}" # {id}, {delim} and {clients} are supported
+workspace = "{id}:{clients}{delim}" # {id}, {delim} and {clients} are supported
 # workspace_empty = "{id}" # {id}, {delim} and {clients} are supported
 # client formatter
 client = "{icon}"
@@ -44,8 +44,8 @@ client_dup_active = "*{icon}*{delim}{icon}{counter_unfocused}"
 "google.com" = ""
 "reddit.com"=""
 "github.com"=""
-"youtube.com"=""
-"bilibili.com"=""
+"youtube.com"="󰑈"
+"bilibili.com"="󰑈"
 
 # [title_in_initial_class."(?i)kitty"]
 # "(?i)neomutt" = "neomutt"
@@ -107,6 +107,7 @@ aProgram = "^$" # will match null title for aProgram
 "libreoffice-writer"=""
 "libreoffice-calc"=""
 "(?i)kitty"=""
+"(?i)alacritty"=""
 "thunderbird"=""
 "com.usebottles.bottles"="󰡶"
 "bottles"="󰡶"
@@ -130,4 +131,16 @@ aProgram = "^$" # will match null title for aProgram
 "libreoffice-impress"="󱎐"
 "libreoffice-impress"=""
 "wechat.exe"=""
+"wechat"=""
 "font-manager"="󰬴"
+"steam_proton"=""
+"moe.launcher.an-anime-game-launcher"=""
+"yuanshen.exe"=""
+"heroic"=""
+"steam"="󰓓"
+"gamescope"=""
+"imv"=""
+"scrcpy"="󰀲"
+"nm-connection-editor"=""
+"xfreerdp"=""
+"rstudio"=""
