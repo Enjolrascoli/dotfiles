@@ -1,8 +1,8 @@
 {
     "height": 36,
-    "modules-right": [ "battery", "cpu", "bluetooth", "wireplumber", "custom/notification", "clock#time"],
     "modules-left": ["custom/barpadding","sway/workspaces","tray"],
     "modules-center": ["sway/window"],
+    "modules-right": [ "battery", "cpu", "bluetooth", "wireplumber", "custom/notification", "custom/keyd", "clock#time"],
     "layer": "top",
     "margin-top": 2,
 
@@ -87,5 +87,9 @@
         "exec": "swaync-client -swb",
         "on-click-right": "swaync-client -d -sw",
         "escape": true
+    },
+
+    "custom/keyd": {
+        "exec": "keyd-layer-monitor && pkill keyd-layer-moni",
     },
 }
