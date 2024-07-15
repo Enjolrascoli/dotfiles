@@ -1,0 +1,4 @@
+focus_follows_mouse no
+bar {
+    swaybar_command waybar
+}

@@ -1,0 +1,165 @@
+set $mod Mod4
+set $term alacritty
+set $menu ~/.config/rofi/launchers/type-1/launcher.sh
+
+# Note: pass the final command to swaymsg so that the resulting window can be opened 
+# on the original workspace that the command was run on.
+# set $menu dmenu_path | dmenu | xargs swaymsg exec --
+# set $menu rofi -show drun | xargs swaymsg exec --
+
+set $left   h
+set $down   j
+set $up     k
+set $right  l
+
+bindsym $mod+e exec $term
+bindsym $mod+q kill
+bindsym $mod+d exec pkill rofi || $menu
+
+# Drag floating windows by holding down $mod and left mouse button.
+# Resize them with right mouse button + $mod.
+# Despite the name, also works for non-floating windows.
+# Change normal to inverse to use left mouse button for resizing and right
+# mouse button for dragging.
+floating_modifier $mod normal
+
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+f exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+
+# navigation
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+
+# Workspaces:
+# switch to workspace
+workspace_auto_back_and_forth yes
+bindsym $mod+1 workspace --no-auto-back-and-forth number 1
+bindsym $mod+2 workspace --no-auto-back-and-forth number 2
+bindsym $mod+3 workspace --no-auto-back-and-forth number 3
+bindsym $mod+4 workspace --no-auto-back-and-forth number 4
+bindsym $mod+5 workspace --no-auto-back-and-forth number 5
+bindsym $mod+6 workspace --no-auto-back-and-forth number 6
+bindsym $mod+7 workspace --no-auto-back-and-forth number 7
+bindsym $mod+8 workspace --no-auto-back-and-forth number 8
+bindsym $mod+9 workspace --no-auto-back-and-forth number 9
+bindsym $mod+0 workspace --no-auto-back-and-forth number 10
+bindsym XF86Launch1 workspace number 12
+bindsym $mod+tab workspace number 11
+#bindsym --no-repeat $mod+Tab exec "echo 1 > /tmp/sovpipe"
+
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+bindsym $mod+Shift+XF86Launch1 move container to workspace number 12
+#bindsym --release $mod+Tab exec "echo 0 > /tmp/sovpipe"
+
+# Note: workspaces can have any name you want, not just numbers.
+
+## Layout stuff:
+
+# You can "split" the current object of your focus with
+# $mod+b or $mod+v, for horizontal and vertical splits
+# respectively.
+bindsym $mod+c splith
+bindsym $mod+v splitv
+
+# Switch the current container between different layout styles
+bindsym $mod+s layout toggle stacking split
+bindsym $mod+w layout toggle tabbed split
+bindsym $mod+g layout toggle split
+
+# Make the current focus fullscreen
+bindsym $mod+t fullscreen
+
+# Toggle the current focus between tiling and floating mode
+bindsym $mod+a floating toggle
+
+# Swap focus between the tiling area and the floating area
+bindsym $mod+space focus mode_toggle
+
+# Move focus to the parent container
+# bindsym $mod+a focus parent
+#
+# Scratchpad:
+#
+# Sway has a "scratchpad", which is a bag of holding for windows.
+# You can send windows there and get them back later.
+
+# Move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+minus scratchpad show
+#
+# Resizing containers:
+#
+mode "resize" {
+	# left will shrink the containers width
+	# right will grow the containers width
+	# up will shrink the containers height
+	# down will grow the containers height
+	bindsym $left resize shrink width 10px
+	bindsym $down resize grow height 10px
+	bindsym $up resize shrink height 10px
+	bindsym $right resize grow width 10px
+
+	# Ditto, with arrow keys
+	bindsym Left resize shrink width 10px
+	bindsym Down resize grow height 10px
+	bindsym Up resize shrink height 10px
+	bindsym Right resize grow width 10px
+
+	# Return to default mode
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+# bindsym $mod+Shift+Tab move workspace to output left
+
+bindsym XF86TouchpadToggle input type:touchpad events toggle enabled disabled
+bindsym XF86MonBrightnessUp    exec ~/.config/hypr/scripts/brightness up
+bindsym XF86MonBrightnessDown  exec ~/.config/hypr/scripts/brightness down
+bindsym XF86AudioRaiseVolume   exec ~/.config/hypr/scripts/volume raise
+bindsym XF86AudioLowerVolume   exec ~/.config/hypr/scripts/volume lower
+bindsym XF86AudioMute          exec ~/.config/hypr/scripts/volume mute
+bindsym XF86AudioMicMute       exec ~/.config/hypr/scripts/volume mic-mute
+bindsym XF86KbdBrightnessUp    exec asusctl --next-kbd-bright
+bindsym XF86KbdBrightnessDown  exec asusctl --prev-kbd-bright
+bindsym XF86Launch4            exec asusctl profile -n
+bindsym XF86Launch3            exec rfkill toggle bluetooth
+
+#notification
+bindsym $mod+n       exec swaync-client --toggle-panel
+bindsym $mod+shift+n exec swaync-client --hide-latest
+# bindsym $mod+n exec dunstctl history-pop
+# bindsym $mod+Shift+n exec dunstctl close-all
+
+# bindsym $mod+p exec grim -t jpeg -q 100 -g "$(slurp)" ~/Pictures/$(date +%Y-%m-%d_%H-%m-%s).jpg
+bindsym $mod+p exec sway-screenshot -m region -o $HOME/Pictures/screenshots
+bindsym $mod+shift+p exec sway-screenshot -m window -o $HOME/Pictures/screenshots
+bindsym $mod+o exec pkill rofi || cliphist list | rofi -dmenu | cliphist decode | wl-copy
+
+# mouse simulation
+# bindsym $mod+i exec warpd --normal
+# bindsym $mod+o exec warpd --hint
+# bindsym $mod+u exec warpd --grid
+
+bindsym $mod+shift+return output * power off
+bindsym $mod+return output * power on

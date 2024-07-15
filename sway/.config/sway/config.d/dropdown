@@ -1,0 +1,23 @@
+set $ddterm-id dropdown-terminal
+set $ddterm $term --class $ddterm-id
+set $ddterm-resize resize set 80ppt 80ppt, move position center
+set $thunderbird-resize resize set 99ppt 99ppt, move position center
+
+# resize/move new dropdown terminal windows
+for_window [app_id="$ddterm-id|thunderbird"] {
+  floating enable
+  move to scratchpad
+  scratchpad show
+  $thunderbird-resize
+}
+
+# for_window [app_id="$ddterm-id"] { $ddterm-resize }
+# for_window [app_id="thunderbird"] { $thunderbird-resize }
+
+# show existing or start new dropdown terminal
+bindsym $mod+f exec swaymsg '[app_id="$ddterm-id"] scratchpad show' \
+  || $ddterm \
+  && swaymsg '[app_id="$ddterm-id"] $ddterm-resize'
+
+bindsym $mod+m exec swaymsg '[app_id="thunderbird"] scratchpad show' \
+  && swaymsg '[app_id="thunderbird"] $thunderbird-resize'

@@ -1,0 +1,34 @@
+# style
+#font 			            pango:monospace 16px 
+default_border pixel 2
+default_floating_border pixel 1
+smart_gaps on
+smart_borders no_gaps
+#titlebar_border_thickness 	1
+gaps    top     0
+gaps    bottom	0
+gaps    left	0
+gaps    right	0
+gaps    inner 	4
+gaps    outer   2
+
+# window decorations
+# class			        border	    background	text        indicator   child_border
+client.focused          #80a0ff     #303030     #c6c6c6     #255ce6     #80a0ff
+#client.focused_inactive #80a0ff     #303030     #c6c6c6     #80a0ff     #80a0ff
+client.unfocused        #80a0ff     #080808     #c6c6c6     #303030     #303030
+#client.urgent           #80a0ff     #80a0ff     #080808     #80a0ff     #80a0ff
+
+set $gnome-schema org.gnome.desktop.interface
+
+# exec_always {
+#    gsettings set $gnome-schema gtk-theme 'breeze-dark'
+#    gsettings set $gnome-schema gtk-application-prefer-dark-theme 0
+#}
+
+# import GTK settings
+# exec_always $HOME/bin/import-gsettings \
+#	gtk-theme:gtk-theme-name \
+#	icon-theme:gtk-icon-theme-name \
+#	cursor-theme:gtk-cursor-theme-name\
+#	font-name:gtk-font-name

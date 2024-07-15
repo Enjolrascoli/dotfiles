@@ -1,0 +1,25 @@
+### Autostart
+exec nm-applet --indicator
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec_always systemctl --user restart kanshi
+exec_always sworkstyle &> /tmp/sworkstyle.log
+exec swaync
+
+exec nm-applet --indicator
+exec solaar -w hide &
+exec fcitx5
+exec thunderbird
+exec udiskie --no-automount --notify --tray &
+exec rog-control-center
+exec keyd-application-mapper -d
+
+exec /usr/local/bin/acc
+exec $HOME/.config/hypr/scripts/startup
+exec gtk-launch org.keepassxc.KeePassXC.desktop
+
+exec wl-paste --type text --watch cliphist store #Stores only text data
+exec wl-paste --type image --watch cliphist store #Stores only image data
+
+exec dolphin --daemon
+exec swayosd-server
+#exec rm -f /tmp/sovpipe && mkfifo /tmp/sovpipe && tail -f /tmp/sovpipe | sov

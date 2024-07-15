@@ -1,0 +1,39 @@
+for_window {
+  [shell="xwayland"] title_format "%title [XWayland]"
+  [app_id="zoom"] floating enable; border none
+  [app_id="looking-glass-client"] fullscreen enable
+  [app_id="blueberry.py"] floating enable
+  [app_id="io.github.celluloid_player.Celluloid"] floating enable
+  [app_id="org.gnome.Calculator"] floating enable
+  [app_id="org.gnome.Nautilus"] floating enable
+  [app_id="pavucontrol"] floating enable
+  [app_id="org.gnome.Settings"] floating enable
+  [app_id="org.gnome.design.Palette"] floating enable
+  [window_role="pop-up|bubble|dialog"] floating enable
+  [window_type="dialog"] floating enable
+  [class=".*.exe"] floating enable; border none
+  [class="scrcpy"] floating enable; border none
+  [title="guiscrcpy"] floating enable; border none
+  [title="^(File|Folder)\s*Already Exists\s*—\s*" app_id="dolphin|org.kde.ark"] floating enable
+  [title="^(Copying|Moving|Compressing|Deleting)\s*—\s*Dolphin" app_id="dolphin"] floating enable
+  [title="^Extracting\s" app_id="(dolphin|org.kde.ark)"] floating enable
+  [title="^Information\s*—\s*Dolphin" app_id="dolphin"] floating enable
+  [title="^Loading archive" app_id="org.kde.ark"] floating enable
+
+  [class="steam" title="Steam"] tile
+  [class="steam"] floating enable
+  [class="epicgameslauncher.exe"] tile
+  [class="explorer.exe" title="Wine System Tray"] kill
+}
+
+assign {
+  [app_id="looking-glass-client"] workspace number 12
+  [class="gta5.exe|socialclubhelper.exe|launcher.exe|steam_proton"] workspace number 11
+  [app_id="steam_proton"] workspace number 11
+  [app_id="moe.launcher.an-anime-game-launcher"] workspace number 11
+  [class="yuanshen.exe"] workspace number 11
+  [app_id="steam_app_*"] workspace number 11
+  [app_id="gamescope"] workspace number 11
+  [app_id="hl2_linux"] workspace number 11
+  [class="epicgameslauncher.exe"] workspace number 20
+}
