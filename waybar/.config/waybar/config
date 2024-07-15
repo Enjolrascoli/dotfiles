@@ -1,8 +1,8 @@
 {
     "height": 36,
-    "modules-left": ["custom/barpadding","hyprland/workspaces","tray"],
-    "modules-center": ["hyprland/window"],
     "modules-right": [ "battery", "cpu", "bluetooth", "wireplumber", "custom/notification", "clock#time"],
+    "modules-left": ["custom/barpadding","sway/workspaces","tray"],
+    "modules-center": ["sway/window"],
     "layer": "top",
     "margin-top": 2,
 
