@@ -1,6 +1,6 @@
 alias tt='trans :zh'
 alias rr='ranger'
-alias swaycfg="nvim ~/.config/sway/config"
+alias swaycfg="nvim ~/.config/sway/config.d/config"
 alias grubcfg="sudoedit /etc/default/grub"
 alias grubgen="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias initcfg="sudoedit /etc/mkinitcpio.conf"
@@ -25,5 +25,4 @@ alias ll="sdcv --color --use-dict 朗道英汉字典5.0"
 alias alicfg="$EDITOR ~/.config/zsh/alias.zsh"
 alias iconcfg="$EDITOR ~/.config/hyprland-autoname-workspaces/config.toml"
 alias hyprcfg="$EDITOR ~/.config/hypr/settings.conf"
-alias fyp="cd ~/Documents/um/HSCI4000/"
-alias um="cd ~/Documents/um/"
+alias out="loginctl terminate-user $USER"
